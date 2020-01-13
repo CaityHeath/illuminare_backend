@@ -28,7 +28,6 @@ function getElections(req, res){
 
   return superagent.get(url)
     .then(response => {
-      console.log(response.body);
       return res.json(response.body);
     }).catch(err => handleError(err, res));
 }
@@ -41,7 +40,3 @@ function handleError(err, res){
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-
-
-// https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAAoE7GA9s53_NrusNCv0RVW_h2hZxW-FY?address=4241%20Greenwood%20Ave.%20N%20Seattle%20Wa
-// https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAAoE7GA9s53_NrusNCv0RVW_h2hZxW-FY&address=4241%20Greenwood%20Ave.%20N%20Seattle%20Wa
